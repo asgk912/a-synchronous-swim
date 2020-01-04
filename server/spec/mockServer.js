@@ -5,6 +5,17 @@
 // There are better options if using expressjs.
 /////////////////////////////////////////////////
 
+// $.ajax({
+//   url: "http://127.0.0.1:3000",
+//   method: {
+//     SwimTeam.move("up")
+//   }
+//   success: function(data) {
+//       console.log("success");
+//       console.log(data);
+//       }
+//   })
+
 var request = function(url, method, postdata) {
   this.url = url;
   this.method = method;

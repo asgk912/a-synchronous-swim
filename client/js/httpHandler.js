@@ -11,13 +11,36 @@
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
+
+  //create a random swim request
+  const randomSwimRequest =() => {
+    //ajax call
+    $.ajax({
+      type: 'GET',
+      //reference serverURL
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: (command) => {
+        setTimeout(randomSwimRequest, 1000);
+        //console.log("data", command);
+        SwimTeam.move(command);
+        
+      }
+    });
+  };
+
+  randomSwimRequest();
+
+
   const ajaxFileUplaod = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
