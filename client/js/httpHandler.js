@@ -23,10 +23,10 @@
       contentType: false,
       processData: false,
       success: (command) => {
-        setTimeout(randomSwimRequest, 1000);
+        setTimeout(randomSwimRequest, 100);
         //console.log("data", command);
         SwimTeam.move(command);
-        
+
       }
     });
   };
