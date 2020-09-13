@@ -19,11 +19,12 @@
       type: 'GET',
       //reference serverURL
       url: serverUrl,
-      cache: false,
-      contentType: false,
-      processData: false,
+      dataType: 'text',
+      // cache: false,
+      // contentType: false,
+      // processData: false,
       success: (command) => {
-        setTimeout(randomSwimRequest, 100);
+        // setTimeout(randomSwimRequest, 500);
         //console.log("data", command);
         SwimTeam.move(command);
 
@@ -32,6 +33,28 @@
   };
 
   randomSwimRequest();
+
+  const backgroundImageRequest =() => {
+    //ajax call
+    $.ajax({
+      type: 'GET',
+      //reference serverURL
+      url: serverUrl,
+      dataType: 'html',
+      // cache: false,
+      // contentType: false,
+      // processData: false,
+      success: (data) => {
+        // setTimeout(backgroundImageRequest, 1500);
+        //console.log("data", command);
+        // SwimTeam.move(command);
+
+      }
+    });
+  };
+
+  backgroundImageRequest();
+
 
 
   const ajaxFileUplaod = (file) => {
